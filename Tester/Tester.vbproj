@@ -105,5 +105,15 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SandBox.BL\SandBox.BL.vbproj">
+      <Project>{058224ee-ec74-4b12-8418-bf888843c888}</Project>
+      <Name>SandBox.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SandBox.Entities\SandBox.Entities.vbproj">
+      <Project>{08ce0b17-ac39-40bd-9e5c-8d868e3ce496}</Project>
+      <Name>SandBox.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
