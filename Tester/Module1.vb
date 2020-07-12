@@ -16,10 +16,6 @@ Module Module1
         For Each user In list
             Console.WriteLine(user.Name)
         Next
-
-
-
-
     End Sub
 
 
