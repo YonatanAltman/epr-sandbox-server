@@ -1,15 +1,7 @@
-Public Class UserManager
-    Public Sub New()
+﻿Public Class UserManager
+    Shared UserList As List(Of User)
 
 
 
-    End Sub
-
-
-    Public Function GetAllUsers()
-
-
-
-    End Function
 
 End Class
