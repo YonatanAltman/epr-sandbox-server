@@ -14,14 +14,34 @@ Module Module1
         Dim list = GetAllUsers()
 
         For Each user In list
-            Console.WriteLine(user.Name)
+            Console.WriteLine(user.ID.ToString() + "|" + user.Name)
         Next
+        Dim userid = 0
+        Dim id = Console.ReadLine()
+        If Integer.TryParse(id, userid) Then
+
+            Dim orders = GetOrderByUserId(userid)
+
+
+            For Each order In orders
+                Console.WriteLine(order)
+
+            Next
+        End If
+
     End Sub
 
 
     Function GetAllUsers() As List(Of User)
         Dim manager = New UserManager()
         Return manager.GetAll()
+
+    End Function
+
+
+    Function GetOrderByUserId(id As Integer) As List(Of Order)
+        Dim manager = New OrderManager()
+        Return manager.GetUserOrders(id)
 
     End Function
 
