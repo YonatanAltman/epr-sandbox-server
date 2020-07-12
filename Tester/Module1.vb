@@ -34,7 +34,11 @@ Module Module1
 
     Function GetAllUsers() As List(Of User)
         Dim manager = New UserManager()
-        Return manager.GetAll()
+        Dim users = manager.GetAll()
+        manager.Dispose()
+
+
+        Return users
 
     End Function
 
