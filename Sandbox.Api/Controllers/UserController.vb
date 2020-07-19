@@ -17,10 +17,16 @@ Namespace Controllers
             Dim users As List(Of User)
 
             Using manager As New UserManager
+                Dim m As Integer
                 users = manager.GetAll()
 
 
             End Using
+
+
+
+
+
 
             Return users
         End Function
@@ -30,7 +36,7 @@ Namespace Controllers
             Dim user As User
 
             Using manager As New UserManager
-                user = manager.GetAll().Find(Function(u) u.ID = id)
+                user = manager.GetAll().Find(Function(u) u.id = id)
 
 
             End Using

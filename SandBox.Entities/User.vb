@@ -1,12 +1,14 @@
 ﻿Public Class User
-    Property ID As Integer
-    Property Name As String
-    Property Password As String
+    Property id As Integer
+    Property firstname As String
+    Property password As String
+    Property email As String
 
-    Public Sub New(id As Integer, Optional name As String = Nothing)
-        Me.ID = id
-        Me.Name = name
-        Me.Password = "1111"
+    Public Sub New(id As Integer, email As String, Optional name As String = Nothing)
+        Me.id = id
+        Me.firstname = name
+        Me.email = email
+        Me.password = "1111"
     End Sub
     Public Sub New()
 

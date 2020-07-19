@@ -14,7 +14,7 @@ Module Module1
         Dim list = GetAllUsers()
 
         For Each user In list
-            Console.WriteLine(user.ID.ToString() + "|" + user.Name)
+            Console.WriteLine(user.id.ToString() + "|" + user.firstname)
         Next
         Dim userid = 0
         Dim id = Console.ReadLine()

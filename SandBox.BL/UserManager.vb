@@ -6,10 +6,11 @@ Public Class UserManager
     Shared Function GerUserList() As List(Of User)
         Dim list As New List(Of User)
 
-        list.Add(New User(1001, "Yonatan"))
-        list.Add(New User(1002, "Maayan"))
-        list.Add(New User(1003, "Shirit"))
-        list.Add(New User(1004, "Uri"))
+        list.Add(New User(1001, "yonatan@yaltman.com", "Yonatan"))
+        list.Add(New User(1002, "maayan@Epr.com", "Maayan"))
+        list.Add(New User(1003, "shirit@Epr.com", "Shirit"))
+        list.Add(New User(1004, "uri@Epr.com", "Uri"))
+
 
         Return list
     End Function
