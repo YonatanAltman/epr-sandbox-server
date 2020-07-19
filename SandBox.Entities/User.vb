@@ -3,11 +3,13 @@
     Property firstname As String
     Property password As String
     Property email As String
+    Property role As String
 
-    Public Sub New(id As Integer, email As String, Optional name As String = Nothing)
+    Public Sub New(id As Integer, email As String, Optional name As String = Nothing, Optional role As String = Nothing)
         Me.id = id
         Me.firstname = name
         Me.email = email
+        Me.role = role
         Me.password = "1111"
     End Sub
     Public Sub New()
@@ -15,4 +17,9 @@
     End Sub
 
 
+End Class
+
+Public Class LoginRequest
+    Property username As String
+    Property password As String
 End Class

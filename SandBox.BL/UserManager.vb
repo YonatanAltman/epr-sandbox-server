@@ -10,6 +10,7 @@ Public Class UserManager
         list.Add(New User(1002, "maayan@Epr.com", "Maayan"))
         list.Add(New User(1003, "shirit@Epr.com", "Shirit"))
         list.Add(New User(1004, "uri@Epr.com", "Uri"))
+        list.Add(New User(1005, "micha@Epr.com", "Uri", "manager"))
 
 
         Return list

@@ -45,9 +45,22 @@ Namespace Controllers
         End Function
 
         ' POST: api/User
-        Public Sub PostValue(<FromBody()> ByVal value As String)
+        Public Function PostValue(<FromBody()> ByVal req As LoginRequest) As User
+            ' get username & password
+            Dim user As User
 
-        End Sub
+            Using manager As New UserManager
+                Dim m As Integer
+                user = manager.GetAll().Find(Function(u) u.email = req.username)
+
+
+            End Using
+
+            Return user
+
+
+
+        End Function
 
         ' PUT: api/User/5
         Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)
