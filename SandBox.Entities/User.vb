@@ -16,10 +16,13 @@
 
     End Sub
 
+    Public Class LoginRequest
+        Property username As String
+        Property password As String
+
+
+    End Class
+
 
 End Class
 
-Public Class LoginRequest
-    Property username As String
-    Property password As String
-End Class

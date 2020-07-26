@@ -1,8 +1,10 @@
-﻿Imports System.Net
+﻿
+Imports System.Net
 Imports System.Web.Http
 Imports Sandbox.Entities
 Imports Sandbox.BL
 Imports System.Web.Http.Cors
+Imports Sandbox.Entities.User
 
 Namespace Controllers
 
