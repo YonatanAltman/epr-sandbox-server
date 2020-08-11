@@ -11,6 +11,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SandBox.BL", "SandBox.BL\Sa
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Tester", "Tester\Tester.vbproj", "{DB83953B-0FD9-4531-A3B1-FB18480FAC40}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Dal", "Dal\Dal.vbproj", "{479F66F5-C85A-4486-80B7-63347328A6BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DB83953B-0FD9-4531-A3B1-FB18480FAC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB83953B-0FD9-4531-A3B1-FB18480FAC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB83953B-0FD9-4531-A3B1-FB18480FAC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479F66F5-C85A-4486-80B7-63347328A6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479F66F5-C85A-4486-80B7-63347328A6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479F66F5-C85A-4486-80B7-63347328A6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479F66F5-C85A-4486-80B7-63347328A6BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
