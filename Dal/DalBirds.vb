@@ -20,7 +20,7 @@ Public Class BirdsDal
 
 
     End Sub
-    Public Function ExecuteReader(strx As String, Optional sqlparams As List(Of SqlParameter) = Nothing) As NpgsqlDataReader
+    Public Function ExecuteReader(strx As String, Optional sqlparams As List(Of NpgsqlParameter) = Nothing) As NpgsqlDataReader
 
         Dim Command As NpgsqlCommand
         'כבר פתוח

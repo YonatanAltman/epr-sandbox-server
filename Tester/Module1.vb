@@ -4,39 +4,60 @@ Imports SandBox.Entities
 Module Module1
 
     Sub Main()
-        Console.WriteLine("Let's start with your name:")
-        Dim msg = "Thank you :"
-        Dim name = Console.ReadLine()
-        msg &= name
-
-        Console.WriteLine(msg)
-
-        Dim list = GetAllUsers()
-
-        For Each user In list
-            Console.WriteLine(user.id.ToString() + "|" + user.first_name)
-        Next
-        Dim userid = 0
-        Dim id = Console.ReadLine()
-        If Integer.TryParse(id, userid) Then
-
-            Dim orders = GetOrderByUserId(userid)
+        'GetAllBirds()
+        'AddBird()
+        'AddAria()
+        'AddSpot()
+        GetUserSpots()
 
 
-            For Each order In orders
-                Console.WriteLine(order)
+    End Sub
 
-            Next
-        End If
+    Sub GetAllBirds()
+        Dim tester As New BirdTester
+
+        Dim birds = tester.GetAllBirds()
+
+
+    End Sub
+    Sub AddBird()
+        Dim tester As New BirdTester
+
+        Dim birds = tester.AddBird()
+
+
+    End Sub
+    Sub AddAria()
+        Dim tester As New BirdTester
+
+        Dim birds = tester.AddAria()
+
+
+    End Sub
+    Sub AddSpot()
+        Dim tester As New BirdTester
+
+        Dim birds = tester.AddSpot()
+
+
+    End Sub
+    Sub GetUserSpots()
+        Dim tester As New BirdTester
+
+        Dim birds = tester.GetUserSpots()
+
 
     End Sub
 
 
     Function GetAllUsers() As List(Of BirdUser)
-        Dim manager = New UserManager()
-        Dim users = manager.GetAll()
-        manager.Dispose()
+        Dim users As List(Of BirdUser)
+        Using manager As New UserManager
 
+            users = manager.GetAll()
+            manager.Dispose()
+
+        End Using
 
         Return users
 
