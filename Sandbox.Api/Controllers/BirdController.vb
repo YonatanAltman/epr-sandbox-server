@@ -8,9 +8,9 @@ Namespace Controllers
         Inherits ApiController
 
         ' GET: api/Bird
-        Public Function GetValues() As IEnumerable(Of BirdUser)
+        Public Function GetValues() As IEnumerable(Of Bird)
 
-            Dim users As List(Of BirdUser)
+            Dim users As List(Of Bird)
             Using manager As New BirdManager
                 users = manager.GetAll()
 

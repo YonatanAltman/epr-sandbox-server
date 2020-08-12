@@ -14,7 +14,7 @@ Module Module1
         Dim list = GetAllUsers()
 
         For Each user In list
-            Console.WriteLine(user.id.ToString() + "|" + user.firstname)
+            Console.WriteLine(user.id.ToString() + "|" + user.first_name)
         Next
         Dim userid = 0
         Dim id = Console.ReadLine()
@@ -32,7 +32,7 @@ Module Module1
     End Sub
 
 
-    Function GetAllUsers() As List(Of User)
+    Function GetAllUsers() As List(Of BirdUser)
         Dim manager = New UserManager()
         Dim users = manager.GetAll()
         manager.Dispose()
