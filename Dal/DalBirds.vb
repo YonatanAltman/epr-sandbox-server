@@ -4,22 +4,6 @@ Imports System.Data.Entity.Infrastructure
 Imports System.Data.SqlClient
 Imports Npgsql
 
-Public Class BirdsContext
-    Inherits DbContext
-
-    'Property BirdsContext As String
-    Public Sub New()
-        MyBase.New("name=academka-birds")
-    End Sub
-    Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
-        Throw New UnintentionalCodeFirstException()
-    End Sub
-
-    Public Property users() As DbSet(Of app_user)
-    Public Property birds() As DbSet(Of bird)
-    Public Property spot() As DbSet(Of bird_spot)
-End Class
-
 
 Public Class BirdsDal
     Implements IDisposable
@@ -36,7 +20,7 @@ Public Class BirdsDal
 
 
     End Sub
-    Public Function ExecuteReader(strx As String, Optional sqlparams As List(Of SqlParameter) = Nothing) As NpgsqlDataReader
+    Public Function ExecuteReader(strx As String, Optional sqlparams As List(Of NpgsqlParameter) = Nothing) As NpgsqlDataReader
 
         Dim Command As NpgsqlCommand
         'כבר פתוח
