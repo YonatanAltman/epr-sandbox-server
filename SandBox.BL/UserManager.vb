@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports Dal
+Imports Npgsql
 Imports SandBox.Entities
 
 Public Class UserManager
@@ -101,6 +102,69 @@ Public Class UserManager
         Return user
 
     End Function
+
+    Public Function Register(user As BirdUser) As Integer
+
+        Dim id = 0
+
+        Try
+            Using dal As New BirdsDal
+                '1) the function in db
+                Dim strx = "select * from public.new_user(@first_name, @last_name, @email, @phone text, @password text)"
+
+
+                '2) add parameters to function
+                Dim sqlparams As New List(Of NpgsqlParameter)
+
+                sqlparams.Add(New NpgsqlParameter With {
+                              .DbType = DbType.String,
+                              .ParameterName = "first_name",
+                              .Value = user.first_name})
+                sqlparams.Add(New NpgsqlParameter With {
+                              .DbType = DbType.String,
+                              .ParameterName = "last_name",
+                              .Value = user.last_name})
+                sqlparams.Add(New NpgsqlParameter With {
+                              .DbType = DbType.String,
+                              .ParameterName = "email",
+                              .Value = user.email})
+                sqlparams.Add(New NpgsqlParameter With {
+                              .DbType = DbType.String,
+                              .ParameterName = "phone",
+                              .Value = user.phone})
+                sqlparams.Add(New NpgsqlParameter With {
+                              .DbType = DbType.String,
+                              .ParameterName = "password",
+                              .Value = user.password})
+
+                '3) open connection
+                dal.Open()
+
+                '4) read the result from db
+                Dim result = dal.ExecuteReader(strx, sqlparams)
+                If result IsNot Nothing Then
+                    If result.HasRows Then
+                        While result.Read()
+                            id = result(0)
+
+
+                        End While
+
+                    End If
+                End If
+
+
+
+            End Using
+
+        Catch ex As Exception
+            Dim msg = ex.Message
+
+        End Try
+        Return id
+
+    End Function
+
 
     Public Sub Dispose() Implements IDisposable.Dispose
         ' clear all resources

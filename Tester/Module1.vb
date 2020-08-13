@@ -8,7 +8,7 @@ Module Module1
         'AddBird()
         'AddAria()
         'AddSpot()
-        GetUserSpots()
+        'GetUserSpots()
 
 
     End Sub
