@@ -2,8 +2,10 @@
 Imports System.Web.Http
 Imports Sandbox.Entities
 Imports Sandbox.BL
+Imports System.Web.Http.Cors
 
 Namespace Controllers
+    <EnableCors("*", "*", "*")>
     Public Class BirdController
         Inherits ApiController
 
