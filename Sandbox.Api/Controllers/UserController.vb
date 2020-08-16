@@ -14,10 +14,10 @@ Namespace Controllers
         Inherits ApiController
 
         ' GET: api/User
-        Public Function GetValues() As List(Of User)
+        Public Function GetValues() As List(Of BirdUser)
 
             ' get all users
-            Dim users As List(Of User)
+            Dim users As List(Of BirdUser)
 
             Using manager As New UserManager
                 Dim m As Integer
@@ -35,8 +35,8 @@ Namespace Controllers
         End Function
 
         ' GET: api/User/5
-        Public Function GetValue(ByVal id As Integer, ByVal password As Integer) As User
-            Dim user As User
+        Public Function GetValue(ByVal id As Integer, ByVal password As Integer) As BirdUser
+            Dim user As BirdUser
 
             Using manager As New UserManager
                 user = manager.GetAll().Find(Function(u) u.id = id)
@@ -48,9 +48,9 @@ Namespace Controllers
         End Function
 
         ' POST: api/User
-        Public Function PostValue(<FromBody()> ByVal req As LoginRequest) As User
+        Public Function PostValue(<FromBody()> ByVal req As LoginRequest) As BirdUser
             ' get username & password
-            Dim user As User
+            Dim user As BirdUser
 
             Using manager As New UserManager
                 Dim m As Integer
