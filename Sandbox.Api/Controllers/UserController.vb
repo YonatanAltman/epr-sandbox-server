@@ -19,7 +19,7 @@ Namespace Controllers
             Dim users As List(Of BirdUser)
 
             Using manager As New UserManager
-                Dim m As Integer
+
                 users = manager.GetAll()
 
 
@@ -52,7 +52,7 @@ Namespace Controllers
             Dim user As BirdUser
 
             Using manager As New UserManager
-                Dim m As Integer
+
                 user = manager.GetAll().Find(Function(u) u.email = req.username)
 
 
@@ -63,6 +63,22 @@ Namespace Controllers
 
 
         End Function
+        'Public Function PostValue(<FromBody()> ByVal newUser As BirdUser) As Integer
+
+        '    Dim id As Integer
+
+        '    Using manager As New UserManager
+
+        '        id = manager.Register(newUser)
+
+
+        '    End Using
+
+        '    Return id
+
+
+
+        'End Function
 
         ' PUT: api/User/5
         Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)

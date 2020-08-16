@@ -2,7 +2,7 @@
 
 End Class
 
-Public Class BirdUser
+Public Class S
     Public Property id As Integer
     Public Property first_name As String
     Public Property last_name As String

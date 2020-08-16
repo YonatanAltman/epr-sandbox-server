@@ -110,7 +110,7 @@ Public Class UserManager
         Try
             Using dal As New BirdsDal
                 '1) the function in db
-                Dim strx = "select * from public.new_user(@first_name, @last_name, @email, @phone text, @password text)"
+                Dim strx = "select * from public.new_user(@first_name, @last_name, @email, @phone , @password )"
 
 
                 '2) add parameters to function
