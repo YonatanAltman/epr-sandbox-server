@@ -9,7 +9,7 @@ Module Module1
         'AddAria()
         'AddSpot()
         'GetUserSpots()
-
+        Register()
 
     End Sub
 
@@ -62,6 +62,23 @@ Module Module1
         Return users
 
     End Function
+
+    Sub Register()
+        Dim user As New BirdUser With {
+            .email = "my@email.com",
+            .first_name = "yonatan",
+            .last_name = "academka",
+            .password = "1234",
+            .phone = "012345679"}
+        Using manager As New UserManager
+
+            Dim n = manager.Register(user)
+
+        End Using
+
+
+
+    End Sub
 
 
     Function GetOrderByUserId(id As Integer) As List(Of Order)
