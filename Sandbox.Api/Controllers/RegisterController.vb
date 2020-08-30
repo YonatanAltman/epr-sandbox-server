@@ -1,7 +1,5 @@
 ﻿Imports System.Net
 Imports System.Web.Http
-Imports Sandbox.Entities.User
-Imports Sandbox.BL
 Imports System.Web.Http.Cors
 
 Namespace Controllers
@@ -20,13 +18,9 @@ Namespace Controllers
         End Function
 
         ' POST: api/Register
-        Public Function PostValue(<FromBody()> ByVal register As RegisterRequest) As Integer
-            Dim UserCount As Integer
-            Using manager As New UserManager
-                UserCount = manager.AddUser(register)
-            End Using
+        Public Function PostValue(<FromBody()> ByVal value As String) As String
 
-            Return UserCount
+            Return "harel"
         End Function
 
         ' PUT: api/Register/5

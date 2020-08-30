@@ -10,6 +10,13 @@ Module Module1
         'AddSpot()
         'GetUserSpots()
         Register()
+        Console.WriteLine("What is your name?")
+
+        Dim name = Console.ReadLine()
+        Console.WriteLine("My name is: " + name)
+
+
+
 
     End Sub
 

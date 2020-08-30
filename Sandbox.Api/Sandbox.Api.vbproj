@@ -193,6 +193,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.vb" />
     <Compile Include="Controllers\AreaController.vb" />
     <Compile Include="Controllers\BirdController.vb" />
+    <Compile Include="Controllers\RegisterController.vb" />
     <Compile Include="Controllers\UserController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
