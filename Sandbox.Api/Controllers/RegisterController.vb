@@ -1,6 +1,8 @@
 ﻿Imports System.Net
 Imports System.Web.Http
 Imports System.Web.Http.Cors
+Imports Sandbox.Entities
+Imports Sandbox.BL
 
 Namespace Controllers
     <EnableCors("*", "*", "*")>
@@ -18,9 +20,30 @@ Namespace Controllers
         End Function
 
         ' POST: api/Register
-        Public Function PostValue(<FromBody()> ByVal value As String) As String
+        Public Function PostValue(<FromBody()> ByVal newUser As BirdUser) As RegisterResponse
+            Dim response As New RegisterResponse
+            Try
+                Using manager As New UserManager
+                    Dim val = manager.Register(newUser)
+                    If val < 1 Then
+                        response.rc = 3
+                        response.desc = "something went wrong in db register"
+                    End If
 
-            Return "harel"
+
+                End Using
+            Catch ex As Exception
+                response.rc = 99
+                response.desc = ex.Message
+                response.title = "אוי לא! 🤦‍♂️"
+                response.body = "סליחה, זה קורה לפעמים... תתקשרו ליונתן"
+                ' write to db log
+            End Try
+
+
+
+
+            Return response
         End Function
 
         ' PUT: api/Register/5

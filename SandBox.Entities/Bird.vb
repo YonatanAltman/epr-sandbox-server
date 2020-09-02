@@ -49,3 +49,7 @@ End Class
 '	email text NULL,
 '	phone text NULL,
 '	"password" text NULL,
+Public Class BirdResponse
+    Inherits EprResponse
+    Property bird As Bird
+End Class

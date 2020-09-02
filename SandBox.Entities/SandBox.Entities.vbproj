@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Response.vb" />
     <Compile Include="Order.vb" />
     <Compile Include="Bird.vb" />
     <Compile Include="User.vb" />

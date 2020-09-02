@@ -26,3 +26,7 @@
 
 End Class
 
+Public Class RegisterResponse
+    Inherits EprResponse
+    Property user As BirdUser
+End Class
